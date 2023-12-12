@@ -45,6 +45,9 @@ importers:
       esno:
         specifier: ^4.0.0
         version: 4.0.0
+      jiti:
+        specifier: ^1.21.0
+        version: 1.21.0
       lint-staged:
         specifier: ^15.2.0
         version: 15.2.0
