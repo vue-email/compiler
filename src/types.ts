@@ -39,5 +39,3 @@ export interface SourceOptions {
     source: string
   }[]
 }
-
-export { I18n } from 'vue-email'
