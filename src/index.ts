@@ -4,6 +4,7 @@ import type { DefineConfig, Options, RenderOptions } from './types'
 import { createInitConfig } from './config'
 import { templateRender } from './template'
 
+export * from './types'
 export { templateRender } from './template'
 
 export const config: DefineConfig = (dir: string, config: Options = {}) => {
