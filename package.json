@@ -1,0 +1,94 @@
+{
+  "name": "@vue-email/compiler",
+  "type": "module",
+  "version": "0.8.0-beta.8",
+  "packageManager": "pnpm@8.11.0",
+  "description": "Compile vue-email templates",
+  "author": "David Arenas <davejs136@gmail.com> (https://github.com/Dave136/)",
+  "license": "MIT",
+  "homepage": "https://vuemail.net/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vue-email/compiler.git"
+  },
+  "maintainers": [
+    {
+      "name": "Dave136",
+      "email": "davejs136@gmail.com",
+      "url": "https://github.com/Dave136"
+    },
+    {
+      "name": "Flowko",
+      "email": "younesbarraddev@gmail.com",
+      "url": "https://github.com/Flowko"
+    }
+  ],
+  "bugs": "https://github.com/vue-email/compiler/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepare": "simple-git-hooks"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "import-string": "^0.1.0",
+    "kolorist": "^1.8.0",
+    "scule": "^1.1.1",
+    "vue-email": "npm:vue-email-edge@0.8.0-beta.12-28373289.ab1133a"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.4.5",
+    "@antfu/ni": "^0.21.12",
+    "@antfu/utils": "^0.7.7",
+    "@types/node": "^20.10.4",
+    "bumpp": "^9.2.1",
+    "eslint": "^8.55.0",
+    "esno": "^4.0.0",
+    "lint-staged": "^15.2.0",
+    "pnpm": "^8.12.0",
+    "rimraf": "^5.0.5",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.3.3",
+    "unbuild": "^2.0.0",
+    "vite": "^5.0.8",
+    "vitest": "^1.0.4",
+    "vue-i18n": "^9.8.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
