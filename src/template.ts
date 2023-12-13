@@ -5,8 +5,8 @@ import { blue, bold, lightGreen, red, white } from 'kolorist'
 import type { Component } from 'vue'
 import { pascalCase } from 'scule'
 import { EBody, EButton, EColumn, EContainer, EFont, EHead, EHeading, EHr, EHtml, EImg, ELink, EMarkdown, EPreview, ERow, ESection, ETailwind, EText, VueEmailPlugin, cleanup } from 'vue-email'
+import { importModule } from 'import-string'
 import type { I18n } from 'vue-email'
-import { importFromStringSync } from 'module-from-string'
 import type { Options, RenderOptions, SourceOptions } from './types'
 
 const components = {
@@ -67,7 +67,7 @@ export async function templateRender(name: string, code: SourceOptions, options?
         translations: options?.i18n?.translations || config?.options?.i18n?.translations,
       }
 
-      let vueI18n: any
+      let vueI18n
 
       try {
         vueI18n = await import('vue-i18n')
@@ -117,13 +117,7 @@ async function loadComponent(name: string, source: string, verbose = false) {
   try {
     name = correctName(name)
     const compiledComponent = compile(name, source, verbose)
-
-    const componentCode: Component = (await importFromStringSync(compiledComponent, {
-      transformOptions: {
-        loader: 'ts',
-        target: 'es2018',
-      },
-    })).default
+    const componentCode: Component = (await importModule(compiledComponent)).default
 
     return componentCode
   }
