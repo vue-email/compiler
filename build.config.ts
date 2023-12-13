@@ -10,5 +10,5 @@ export default defineBuildConfig({
     emitCJS: true,
     inlineDependencies: true,
   },
-  externals: ['vue', 'vue-i18n'],
+  externals: ['vue'],
 })
