@@ -9,9 +9,6 @@ export default defineBuildConfig({
   rollup: {
     emitCJS: true,
     inlineDependencies: true,
-    esbuild: {
-      target: 'esnext',
-    },
   },
-  externals: ['vue', 'vue/compiler-sfc', 'vue/server-renderer', 'vue-email', 'vue-i18n'],
+  externals: ['vue', 'vue-i18n'],
 })
