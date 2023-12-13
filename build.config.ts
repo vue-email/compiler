@@ -10,5 +10,6 @@ export default defineBuildConfig({
     emitCJS: true,
     inlineDependencies: true,
   },
-  externals: ['vue'],
+  dependencies: ['esbuild'],
+  externals: ['vue', 'vue/compiler-sfc', 'vue/server-renderer'],
 })
