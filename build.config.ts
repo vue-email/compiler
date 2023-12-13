@@ -9,5 +9,5 @@ export default defineBuildConfig({
   rollup: {
     emitCJS: true,
   },
-  externals: ['vue', 'vue/server-renderer', 'vue-i18n', 'domutils', 'domhandler', 'domelementtype'],
+  externals: ['vue', 'vue/server-renderer'],
 })
