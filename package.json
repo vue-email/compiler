@@ -59,13 +59,13 @@
     "prepare": "simple-git-hooks"
   },
   "peerDependencies": {
-    "vue": ">=3.0.0"
+    "vue": ">=3.3.11"
   },
   "dependencies": {
     "import-string": "^0.1.0",
     "kolorist": "^1.8.0",
     "scule": "^1.1.1",
-    "vue-email": "npm:vue-email-edge@0.8.0-beta.12-28373522.80083f0",
+    "vue-email": "npm:vue-email-edge@latest",
     "vue-i18n": "^9.8.0"
   },
   "devDependencies": {
@@ -78,7 +78,7 @@
     "esno": "^4.0.0",
     "jiti": "^1.21.0",
     "lint-staged": "^15.2.0",
-    "pnpm": "^8.12.0",
+    "pnpm": "^8.12.1",
     "rimraf": "^5.0.5",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.3.3",
