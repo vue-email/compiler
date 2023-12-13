@@ -31,8 +31,6 @@ const components = {
 
 export async function templateRender(name: string, code: SourceOptions, options?: RenderOptions, config?: Options): Promise<string> {
   try {
-    let vueI18n
-
     const verbose = config?.verbose || false
     const hasI18n = options?.i18n?.defaultLocale || config?.options?.i18n?.defaultLocale || options?.i18n?.translations || config?.options?.i18n?.translations
 
@@ -68,6 +66,8 @@ export async function templateRender(name: string, code: SourceOptions, options?
         defaultLocale: options?.i18n?.defaultLocale || config?.options?.i18n?.defaultLocale || 'en',
         translations: options?.i18n?.translations || config?.options?.i18n?.translations,
       }
+
+      let vueI18n: any
 
       try {
         vueI18n = await import('vue-i18n')
