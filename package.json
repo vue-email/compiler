@@ -73,7 +73,7 @@
     "@antfu/ni": "^0.21.12",
     "@antfu/utils": "^0.7.7",
     "@types/node": "^20.10.4",
-    "@vue/server-renderer": "^3.3.11",
+    "@vue/server-renderer": "3.3.4",
     "bumpp": "^9.2.1",
     "eslint": "^8.55.0",
     "esno": "^4.0.0",
