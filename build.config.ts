@@ -10,5 +10,8 @@ export default defineBuildConfig({
     emitCJS: true,
     inlineDependencies: true,
   },
-  externals: ['vue', 'vue-i18n'],
+  externals: ['vue'],
+  alias: {
+    'vue-i18n': 'vue-i18n/dist/vue-i18n.runtime.esm-bundler.js',
+  },
 })
