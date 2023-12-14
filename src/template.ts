@@ -1,6 +1,6 @@
 import * as compiler from 'vue/compiler-sfc'
 import { createApp } from 'vue'
-import { renderToString } from 'vue/server-renderer'
+import { renderToString } from '@vue/server-renderer'
 import { blue, bold, lightGreen, red, white } from 'kolorist'
 import type { Component } from 'vue'
 import { pascalCase } from 'scule'
