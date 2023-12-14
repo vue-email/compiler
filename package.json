@@ -59,8 +59,7 @@
     "prepare": "simple-git-hooks"
   },
   "peerDependencies": {
-    "vue": "3.3.8",
-    "vue-i18n": "^9.8.0"
+    "vue": "3.3.8"
   },
   "dependencies": {
     "import-string": "^0.1.0",

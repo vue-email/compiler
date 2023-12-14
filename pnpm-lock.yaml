@@ -20,9 +20,6 @@ importers:
       vue-email:
         specifier: 0.8.0-beta.13
         version: 0.8.0-beta.13(vue@3.3.8)
-      vue-i18n:
-        specifier: ^9.8.0
-        version: 9.8.0(vue@3.3.8)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.4.5
