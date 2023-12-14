@@ -9,7 +9,6 @@ import { EBody, EButton, EColumn, EContainer, EFont, EHead, EHeading, EHr, EHtml
 import { importModule } from 'import-string'
 import type { I18n } from 'vue-email'
 import type { Options, RenderOptions, SourceOptions } from './types'
-import { } from 'vue-i18n'
 
 const components = {
   EBody,
