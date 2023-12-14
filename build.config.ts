@@ -10,6 +10,5 @@ export default defineBuildConfig({
     emitCJS: true,
     inlineDependencies: true,
   },
-  dependencies: ['esbuild'],
-  externals: ['vue', 'vue-email', 'vue-i18n'],
+  externals: ['vue'],
 })

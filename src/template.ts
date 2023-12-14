@@ -8,6 +8,7 @@ import { pascalCase } from 'scule'
 import { EBody, EButton, EColumn, EContainer, EFont, EHead, EHeading, EHr, EHtml, EImg, ELink, EMarkdown, EPreview, ERow, ESection, ETailwind, EText, VueEmailPlugin, cleanup } from 'vue-email'
 import { importModule } from 'import-string'
 import type { I18n } from 'vue-email'
+import { createI18n } from 'vue-i18n'
 import type { Options, RenderOptions, SourceOptions } from './types'
 
 const components = {
@@ -68,30 +69,26 @@ export async function templateRender(name: string, code: SourceOptions, options?
         translations: options?.i18n?.translations || config?.options?.i18n?.translations,
       }
 
-      let vueI18n
-
-      try {
-        vueI18n = await import('vue-i18n')
-      }
-      catch (error) {
-        throw new Error(`${lightGreen('❌')} ${bold(red(`Missing vue-i18n dependency`))} ${white('please install it using: ')} ${bold(white('npm i vue-i18n@9'))}`)
-      }
-
       const locale = i18nOptions.defaultLocale
-      if (locale && vueI18n) {
+      if (locale) {
         if (verbose)
           console.warn(`${lightGreen('🌎')} ${bold(blue('Injecting translations'))}`)
 
-        const i18n = vueI18n.createI18n({
-          locale,
-          fallbackLocale: i18nOptions.defaultLocale,
-          messages: i18nOptions.translations,
-          silentFallbackWarn: !verbose,
-          silentTranslationWarn: !verbose,
-          warnHtmlInMessage: 'off',
-        })
+        try {
+          const i18n = createI18n({
+            locale,
+            fallbackLocale: i18nOptions.defaultLocale,
+            messages: i18nOptions.translations,
+            silentFallbackWarn: !verbose,
+            silentTranslationWarn: !verbose,
+            warnHtmlInMessage: 'off',
+          })
 
-        app.use(i18n)
+          app.use(i18n)
+        }
+        catch (error) {
+          throw new Error(`${lightGreen('❌')} ${bold(red(`Missing vue-i18n dependency`))} ${white('please install it using: ')} ${bold(white('npm i vue-i18n@9'))}`)
+        }
       }
     }
 
