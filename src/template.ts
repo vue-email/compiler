@@ -8,7 +8,10 @@ import { pascalCase } from 'scule'
 import { EBody, EButton, EColumn, EContainer, EFont, EHead, EHeading, EHr, EHtml, EImg, ELink, EMarkdown, EPreview, ERow, ESection, ETailwind, EText, VueEmailPlugin, cleanup } from 'vue-email'
 import { importModule } from 'import-string'
 import type { I18n } from 'vue-email'
+import { createI18n } from 'vue-i18n'
 import type { Options, RenderOptions, SourceOptions } from './types'
+
+(globalThis as any).__VUE_PROD_DEVTOOLS__ = false
 
 const components = {
   EBody,
@@ -68,17 +71,8 @@ export async function templateRender(name: string, code: SourceOptions, options?
         translations: options?.i18n?.translations || config?.options?.i18n?.translations,
       }
 
-      let createI18n
-
-      try {
-        createI18n = (await import('vue-i18n')).createI18n
-      }
-      catch (error) {
-        throw new Error(`${lightGreen('❌')} ${bold(red(`Missing vue-i18n dependency`))} ${white('please install it using: ')} ${bold(white('npm i vue-i18n@9'))}`)
-      }
-
       const locale = i18nOptions.defaultLocale
-      if (locale && createI18n) {
+      if (locale) {
         if (verbose)
           console.warn(`${lightGreen('🌎')} ${bold(blue('Injecting translations'))}`)
 

@@ -11,7 +11,4 @@ export default defineBuildConfig({
     inlineDependencies: true,
   },
   externals: ['vue'],
-  // alias: {
-  //   'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
-  // },
 })
