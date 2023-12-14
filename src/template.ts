@@ -2,7 +2,7 @@ import { compileScript, compileStyle, compileTemplate, parse } from '@vue/compil
 import type { SFCScriptBlock, SFCStyleCompileResults } from '@vue/compiler-sfc'
 import { createApp } from 'vue'
 import { renderToString } from '@vue/server-renderer'
-import { blue, bold, lightGreen, red, white } from 'kolorist'
+import { blue, bold, lightGreen } from 'kolorist'
 import type { Component } from 'vue'
 import { pascalCase } from 'scule'
 import { EBody, EButton, EColumn, EContainer, EFont, EHead, EHeading, EHr, EHtml, EImg, ELink, EMarkdown, EPreview, ERow, ESection, ETailwind, EText, VueEmailPlugin, cleanup } from 'vue-email'

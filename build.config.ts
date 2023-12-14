@@ -9,6 +9,9 @@ export default defineBuildConfig({
   rollup: {
     emitCJS: true,
     inlineDependencies: true,
+    replace: {
+      __VUE_PROD_DEVTOOLS__: false,
+    },
   },
   externals: ['vue'],
 })
