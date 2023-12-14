@@ -1,4 +1,5 @@
-import * as compiler from 'vue/compiler-sfc'
+import { compileScript, compileStyle, compileTemplate, parse } from '@vue/compiler-sfc'
+import type { SFCScriptBlock, SFCStyleCompileResults } from '@vue/compiler-sfc'
 import { createApp } from 'vue'
 import { renderToString } from '@vue/server-renderer'
 import { blue, bold, lightGreen, red, white } from 'kolorist'
@@ -129,14 +130,14 @@ async function loadComponent(name: string, source: string, verbose = false) {
 }
 
 function compile(filename: string, source: string, verbose = false) {
-  let styles: compiler.SFCStyleCompileResults | null = null
-  let script: compiler.SFCScriptBlock | null = null
+  let styles: SFCStyleCompileResults | null = null
+  let script: SFCScriptBlock | null = null
   const scriptIdentifier = '_sfc_main'
 
   if (verbose)
     console.warn(`${lightGreen('🚧')} ${bold(blue('Compiling'))} ${bold(lightGreen(filename))} ${bold(blue('file'))}`)
 
-  const { descriptor, errors } = compiler.parse(source, {
+  const { descriptor, errors } = parse(source, {
     filename,
   })
 
@@ -144,14 +145,14 @@ function compile(filename: string, source: string, verbose = false) {
     throw new Error(errors.join('\n'))
 
   if (descriptor.script || descriptor.scriptSetup) {
-    script = compiler.compileScript(descriptor, {
+    script = compileScript(descriptor, {
       id: descriptor.filename,
       genDefaultAs: scriptIdentifier,
     })
   }
 
   if (descriptor.styles && descriptor.styles.length) {
-    styles = compiler.compileStyle({
+    styles = compileStyle({
       id: descriptor.filename,
       filename,
       source: descriptor.styles[0].content,
@@ -159,7 +160,7 @@ function compile(filename: string, source: string, verbose = false) {
     })
   }
 
-  const template = compiler.compileTemplate({
+  const template = compileTemplate({
     filename,
     id: descriptor.filename,
     source: descriptor.template!.content,
