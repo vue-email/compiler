@@ -20,6 +20,10 @@ importers:
       vue-email:
         specifier: 0.8.0-beta.13
         version: 0.8.0-beta.13(vue@3.3.8)
+    optionalDependencies:
+      vue-i18n:
+        specifier: ^9.8.0
+        version: 9.8.0(vue@3.3.8)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.4.5
@@ -883,6 +887,7 @@ packages:
   /@intlify/core-base@9.8.0:
     resolution: {integrity: sha512-UxaSZVZ1DwqC/CltUZrWZNaWNhfmKtfyV4BJSt/Zt4Or/fZs1iFj0B+OekYk1+MRHfIOe3+x00uXGQI4PbO/9g==}
     engines: {node: '>= 16'}
+    requiresBuild: true
     dependencies:
       '@intlify/message-compiler': 9.8.0
       '@intlify/shared': 9.8.0
@@ -891,6 +896,7 @@ packages:
   /@intlify/message-compiler@9.8.0:
     resolution: {integrity: sha512-McnYWhcoYmDJvssVu6QGR0shqlkJuL1HHdi5lK7fNqvQqRYaQ4lSLjYmZxwc8tRNMdIe9/KUKfyPxU9M6yCtNQ==}
     engines: {node: '>= 16'}
+    requiresBuild: true
     dependencies:
       '@intlify/shared': 9.8.0
       source-map-js: 1.0.2
@@ -899,6 +905,7 @@ packages:
   /@intlify/shared@9.8.0:
     resolution: {integrity: sha512-TmgR0RCLjzrSo+W3wT0ALf9851iFMlVI9EYNGeWvZFUQTAJx0bvfsMlPdgVtV1tDNRiAfhkFsMKu6jtUY1ZLKQ==}
     engines: {node: '>= 16'}
+    requiresBuild: true
     dev: false
 
   /@isaacs/cliui@8.0.2:
@@ -1516,6 +1523,7 @@ packages:
 
   /@vue/devtools-api@6.5.1:
     resolution: {integrity: sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==}
+    requiresBuild: true
     dev: false
 
   /@vue/reactivity-transform@3.3.8:
