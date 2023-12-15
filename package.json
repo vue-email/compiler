@@ -59,13 +59,13 @@
     "prepare": "simple-git-hooks"
   },
   "peerDependencies": {
-    "vue": "3.3.8"
+    "vue": "^3.3.8"
   },
   "dependencies": {
     "import-string": "^0.1.0",
     "kolorist": "^1.8.0",
     "scule": "^1.1.1",
-    "vue-email": "0.8.0"
+    "vue-email": "npm:vue-email-edge@0.8.0-28377777.28f5ebc"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.4.5",

@@ -18,8 +18,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1
       vue-email:
-        specifier: 0.8.0
-        version: 0.8.0(vue@3.3.8)
+        specifier: npm:vue-email-edge@0.8.0-28377777.28f5ebc
+        version: /vue-email-edge@0.8.0-28377777.28f5ebc(vue@3.3.8)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.4.5
@@ -5375,10 +5375,10 @@ packages:
       - terser
     dev: true
 
-  /vue-email@0.8.0(vue@3.3.8):
-    resolution: {integrity: sha512-rROUj+ZfmnPMxjc9O+2LyUePp8PGaPI9ZkVufS53QnTZtVOkh2jEuilPgMP/jLSCcfXqJDQo8YhqC5u+GfoTZw==}
+  /vue-email-edge@0.8.0-28377777.28f5ebc(vue@3.3.8):
+    resolution: {integrity: sha512-nbPnq3vB2NmxJYdM2oxW0i9unVy5loMxkAwjXGMwXdxBRF1u3aoPse3hXrWABmQkmWZX+Wc6fVz/lZUIcbdJ0g==}
     peerDependencies:
-      vue: 3.3.4
+      vue: ^3.3.8
     dependencies:
       '@flowko/tw-to-css': 0.0.6
       isomorphic-dompurify: 1.12.0
