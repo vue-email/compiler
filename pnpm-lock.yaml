@@ -18,8 +18,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1
       vue-email:
-        specifier: 0.8.1
-        version: 0.8.1(vue@3.3.8)
+        specifier: 0.8.2
+        version: 0.8.2(vue@3.3.8)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.4.5
@@ -5375,8 +5375,8 @@ packages:
       - terser
     dev: true
 
-  /vue-email@0.8.1(vue@3.3.8):
-    resolution: {integrity: sha512-Zen3dxiremgqLHgEmnSlZlypSUls7RW6raRG0ug7TBKCTPKGR+EdDmExkoTl4W9BdqyrPmskN0wFQRMI5XFvtg==}
+  /vue-email@0.8.2(vue@3.3.8):
+    resolution: {integrity: sha512-9F4F069Pz30UXDMbWC0uCmJUFsBnqtdkoGq21sfAqsxRWABNzY0yvZwIsHRcKMwgOr1I4g4KhLL7C8vGoIxwzA==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:

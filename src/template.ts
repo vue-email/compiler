@@ -5,11 +5,11 @@ import { renderToString } from '@vue/server-renderer'
 import { blue, bold, lightGreen } from 'kolorist'
 import type { Component } from 'vue'
 import { pascalCase } from 'scule'
-import { EBody, EButton, EColumn, EContainer, EFont, EHead, EHeading, EHr, EHtml, EImg, ELink, EMarkdown, EPreview, ERow, ESection, ETailwind, EText, VueEmailPlugin, cleanup } from 'vue-email'
+import { EBody, EButton, EColumn, EContainer, EFont, EHead, EHeading, EHr, EHtml, EImg, ELink, EMarkdown, EPreview, ERow, ESection, ETailwind, EText, VueEmailPlugin, cleanup, htmlToText } from 'vue-email'
 import { importModule } from 'import-string'
 import type { I18n } from 'vue-email'
 import { createI18n } from 'vue-i18n'
-import type { Options, RenderOptions, SourceOptions } from './types'
+import type { Options, RenderOptions, Result, SourceOptions } from './types'
 
 (globalThis as any).__VUE_PROD_DEVTOOLS__ = false
 
@@ -33,7 +33,7 @@ const components = {
   EText,
 }
 
-export async function templateRender(name: string, code: SourceOptions, options?: RenderOptions, config?: Options): Promise<string> {
+export async function templateRender(name: string, code: SourceOptions, options?: RenderOptions, config?: Options): Promise<Result> {
   try {
     const verbose = config?.verbose || false
     const hasI18n = options?.i18n?.defaultLocale || config?.options?.i18n?.defaultLocale || options?.i18n?.translations || config?.options?.i18n?.translations
@@ -93,10 +93,14 @@ export async function templateRender(name: string, code: SourceOptions, options?
       console.warn(`${lightGreen('🎉')} ${bold(blue('Rendering template'))} ${bold(lightGreen(name))}`)
 
     const markup = await renderToString(app)
+    const text = htmlToText(markup)
     const doctype = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
-    const doc = `${doctype}${cleanup(markup)}`
+    const html = `${doctype}${cleanup(markup)}`
 
-    return doc
+    return {
+      html,
+      text,
+    }
   }
   catch (error) {
     console.error('Error rendering template', error)
