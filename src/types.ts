@@ -6,7 +6,7 @@ export interface RenderOptions {
 }
 
 export interface DefineConfigFunctions {
-  render: (name: string, options?: RenderOptions) => Promise<string>
+  render: (name: string, options?: RenderOptions) => Promise<Result>
 }
 
 export type DefineConfig = (dir: string, config?: Options) => DefineConfigFunctions
@@ -38,4 +38,9 @@ export interface SourceOptions {
     name: string
     source: string
   }[]
+}
+
+export interface Result {
+  html: string
+  text: string
 }
