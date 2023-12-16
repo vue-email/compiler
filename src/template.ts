@@ -103,8 +103,7 @@ export async function templateRender(name: string, code: SourceOptions, options?
     }
   }
   catch (error) {
-    console.error('Error rendering template', error)
-    return ''
+    throw new Error(`Error rendering template ${name}: ${error}`)
   }
 }
 
