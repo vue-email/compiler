@@ -13,5 +13,6 @@ export default defineBuildConfig({
       __VUE_PROD_DEVTOOLS__: false,
     },
   },
+  dependencies: ['esbuild'],
   externals: ['vue'],
 })
