@@ -2,8 +2,11 @@
 
 <template>
   <section>
-    <Hello>
+    <HelloTest>
       Content inside Hello
-    </Hello>
+    </HelloTest>
+    <hello-test>
+      Content inside hello
+    </hello-test>
   </section>
 </template>

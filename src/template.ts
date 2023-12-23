@@ -52,8 +52,11 @@ export async function templateRender(name: string, code: SourceOptions, options?
     app.use(VueEmailPlugin, config?.options)
     app.config.performance = true
 
-    if (code.components && code.components.length > 0) {
-      for (const emailComponent of code.components) {
+    const componentsUsedInCode = extractComponentsFromVueCode(code.source)
+    const componentsToKeep = code.components.filter(component => componentsUsedInCode.includes(component.name.replace('.vue', '')))
+
+    if (componentsToKeep && componentsToKeep.length > 0) {
+      for (const emailComponent of componentsToKeep) {
         const componentName = correctName(emailComponent.name)
         const componentCode = await loadComponent(componentName, emailComponent.source, verbose)
         if (componentCode) {
@@ -105,6 +108,16 @@ export async function templateRender(name: string, code: SourceOptions, options?
   catch (error) {
     throw new Error(`Error rendering template ${name}: ${error}`)
   }
+}
+
+function extractComponentsFromVueCode(code: string) {
+  const componentRegex = /<(\w+)>/g
+  const matches = code.match(componentRegex)
+
+  if (matches)
+    return matches.map(match => match.slice(1, -1))
+
+  return []
 }
 
 function correctName(name: string) {
