@@ -1,7 +1,7 @@
 {
   "name": "@vue-email/compiler",
   "type": "module",
-  "version": "0.8.4",
+  "version": "0.8.5",
   "packageManager": "pnpm@8.11.0",
   "description": "Compile vue-email templates",
   "author": "David Arenas <davejs136@gmail.com> (https://github.com/Dave136/)",
