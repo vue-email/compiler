@@ -22,10 +22,7 @@ export const config: DefineConfig = (dir: string, config: Options = {}) => {
 }
 
 function readFile(path: string): string {
-  return readFileSync(path, {
-    encoding: 'utf-16le',
-    flag: 'r',
-  }).toString()
+  return readFileSync(path, 'utf-16le').toString()
 }
 
 function getAllVueComponents(emailsPath: string, basePath = ''): { name: string, source: string }[] {
