@@ -4,7 +4,11 @@ import { config } from '../src/index'
 
 describe('compiler', () => {
   const path = resolve(__dirname, './templates')
-  const vuemail = config(path)
+  const vuemail = config(path, {
+    vueCompilerOptions: {
+      isCustomElement: tag => tag === 'mjml' || tag.startsWith('mj-'),
+    },
+  })
 
   it('it should compile vue files', async () => {
     const template = await vuemail.render('DefineComponent.vue', {

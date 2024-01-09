@@ -50,6 +50,10 @@ export async function templateRender(name: string, code: SourceOptions, options?
 
     const app = createApp(component, props)
     app.use(VueEmailPlugin, config?.options)
+
+    if (config && config.vueCompilerOptions)
+      app.config.compilerOptions = config.vueCompilerOptions
+
     app.config.performance = true
 
     if (code.components && code.components.length > 0) {

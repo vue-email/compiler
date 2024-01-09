@@ -6,6 +6,7 @@ export function createInitConfig(options: Options) {
     {
       verbose: true,
       options: options.options,
+      vueCompilerOptions: options.vueCompilerOptions,
     },
     options,
   )

@@ -1,3 +1,4 @@
+import type { RuntimeCompilerOptions } from 'vue'
 import type { I18n, VueEmailPluginOptions } from 'vue-email'
 
 export interface RenderOptions {
@@ -24,6 +25,7 @@ export interface Options {
    * https://vuemail.net/getting-started/installation#options
    */
   options?: VueEmailPluginOptions
+  vueCompilerOptions?: RuntimeCompilerOptions
 }
 
 export interface SourceOptions {
