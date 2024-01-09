@@ -79,4 +79,12 @@ describe('compiler', () => {
       '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><section><h1 data-id="__vue-email-heading" style="" class="mx-0 my-[30px] p-0 text-center text-[24px] font-bold text-black"> Content inside Hello </h1><h1 data-id="__vue-email-heading" style="" class="mx-0 my-[30px] p-0 text-center text-[24px] font-bold text-black"> Content inside hello </h1></section>',
     )
   })
+
+  it('components with props', async () => {
+    const template = await vuemail.render('Main.vue')
+
+    expect(template.html).toBe(
+      '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><body><h1>testing</h1><div>test</div></body>',
+    )
+  })
 })
