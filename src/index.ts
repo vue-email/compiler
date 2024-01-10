@@ -1,5 +1,6 @@
 import { extname, join, resolve } from 'node:path'
 import { readFileSync, readdirSync, statSync } from 'node:fs'
+import { decode } from 'iconv-lite'
 import type { DefineConfig, Options, RenderOptions, Result } from './types'
 import { createInitConfig } from './config'
 import { templateRender } from './template'
@@ -22,7 +23,9 @@ export const config: DefineConfig = (dir: string, config: Options = {}) => {
 }
 
 function readFile(path: string): string {
-  return readFileSync(path, 'utf-8').toString()
+  const buffer = readFileSync(path)
+
+  return decode(buffer, 'utf8').toString()
 }
 
 function getAllVueComponents(emailsPath: string, basePath = ''): { name: string, source: string }[] {
