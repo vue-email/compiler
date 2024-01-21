@@ -18,8 +18,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       vue-email:
-        specifier: npm:vue-email-edge@0.8.5-28430632.51e5adc
-        version: /vue-email-edge@0.8.5-28430632.51e5adc(typescript@5.3.3)(vue@3.3.8)
+        specifier: ^0.8.6
+        version: 0.8.6(typescript@5.3.3)(vue@3.3.8)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.6.3
@@ -197,6 +197,14 @@ packages:
   /@antfu/utils@0.7.7:
     resolution: {integrity: sha512-gFPqTG7otEJ8uP6wrhDv6mqwGWYZKNvAcCq6u9hOj0c+IKCEsY4L1oC9trPq2SaWIzAfHvqfBDxF591JkMf+kg==}
     dev: true
+
+  /@asamuzakjp/dom-selector@2.0.2:
+    resolution: {integrity: sha512-x1KXOatwofR6ZAYzXRBL5wrdV0vwNxlTCK9NCuLqAzQYARqGcvFwiJA6A1ERuh+dgeA4Dxm3JBYictIes+SqUQ==}
+    dependencies:
+      bidi-js: 1.0.3
+      css-tree: 2.3.1
+      is-potential-custom-element-name: 1.0.1
+    dev: false
 
   /@babel/code-frame@7.23.5:
     resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}
@@ -1558,7 +1566,7 @@ packages:
       kolorist: 1.8.0
       scule: 1.2.0
       vue: 3.3.8(typescript@5.3.3)
-      vue-email: 0.8.5(typescript@5.3.3)(vue@3.3.8)
+      vue-email: 0.8.6(typescript@5.3.3)(vue@3.3.8)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -1792,6 +1800,12 @@ packages:
 
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+
+  /bidi-js@1.0.3:
+    resolution: {integrity: sha512-RKshQI1R3YQ+n9YJz2QQ147P66ELpa1FQEg20Dk8oW9t2KgLbpDLLp9aGZ7y8WHSshDknG0bknqGw5/tyCs5tw==}
+    dependencies:
+      require-from-string: 2.0.2
+    dev: false
 
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
@@ -2138,7 +2152,6 @@ packages:
     dependencies:
       mdn-data: 2.0.30
       source-map-js: 1.0.2
-    dev: true
 
   /css-what@6.1.0:
     resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
@@ -2215,9 +2228,9 @@ packages:
       css-tree: 2.2.1
     dev: true
 
-  /cssstyle@3.0.0:
-    resolution: {integrity: sha512-N4u2ABATi3Qplzf0hWbVCdjenim8F3ojEXpBDF5hBpjzW182MjNGLqfmQ0SkSPeQ+V86ZXgeH8aXj6kayd4jgg==}
-    engines: {node: '>=14'}
+  /cssstyle@4.0.1:
+    resolution: {integrity: sha512-8ZYiJ3A/3OkDd093CBT/0UKDWry7ak4BdPTFP2+QEP7cmhouyq/Up709ASSj2cK02BbZiMgk7kYjZNS4QP5qrQ==}
+    engines: {node: '>=18'}
     dependencies:
       rrweb-cssom: 0.6.0
     dev: false
@@ -2334,8 +2347,8 @@ packages:
       domelementtype: 2.3.0
     dev: true
 
-  /dompurify@3.0.6:
-    resolution: {integrity: sha512-ilkD8YEnnGh1zJ240uJsW7AzE+2qpbOUYjacomn3AvJ6J4JhKGSZ2nh4wUIXPZrEPppaCLx5jFe8T89Rk8tQ7w==}
+  /dompurify@3.0.8:
+    resolution: {integrity: sha512-b7uwreMYL2eZhrSCRC4ahLTeZcPZxSmYfmcQGXGkXiZSNW1X85v+SDM5KsWcpivIiUBH47Ji7NtyUdpLeF5JZQ==}
     dev: false
 
   /domutils@3.1.0:
@@ -3609,13 +3622,13 @@ packages:
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  /isomorphic-dompurify@1.12.0:
-    resolution: {integrity: sha512-E/3IKMkFt5qWeWD6RC7caDfS0NroDfCsn6OYvUtJGAQwSteR13m9IardqFCHMJG12uR/nFcuTjULgGW2w3bw3g==}
+  /isomorphic-dompurify@2.2.0:
+    resolution: {integrity: sha512-r+pTGOcmnWm1qGdB6OzAk6zM4kfb7jVHXFliJOTlnRw5G3+LOR2mSWllE2Um1V23njAluToqOeRqp1jMsMFT0A==}
     engines: {node: '>=18'}
     dependencies:
       '@types/dompurify': 3.0.5
-      dompurify: 3.0.6
-      jsdom: 23.0.1
+      dompurify: 3.0.8
+      jsdom: 23.2.0
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -3652,8 +3665,8 @@ packages:
     engines: {node: '>=12.0.0'}
     dev: true
 
-  /jsdom@23.0.1:
-    resolution: {integrity: sha512-2i27vgvlUsGEBO9+/kJQRbtqtm+191b5zAZrU/UezVmnC2dlDAFLgDYJvAEi94T4kjsRKkezEtLQTgsNEsW2lQ==}
+  /jsdom@23.2.0:
+    resolution: {integrity: sha512-L88oL7D/8ufIES+Zjz7v0aes+oBMh2Xnh3ygWvL0OaICOomKEPKuPnIfBJekiXr+BHbbMjrWn/xqrDQuxFTeyA==}
     engines: {node: '>=18'}
     peerDependencies:
       canvas: ^2.11.2
@@ -3661,7 +3674,8 @@ packages:
       canvas:
         optional: true
     dependencies:
-      cssstyle: 3.0.0
+      '@asamuzakjp/dom-selector': 2.0.2
+      cssstyle: 4.0.1
       data-urls: 5.0.0
       decimal.js: 10.4.3
       form-data: 4.0.0
@@ -3669,7 +3683,6 @@ packages:
       http-proxy-agent: 7.0.0
       https-proxy-agent: 7.0.2
       is-potential-custom-element-name: 1.0.1
-      nwsapi: 2.2.7
       parse5: 7.1.2
       rrweb-cssom: 0.6.0
       saxes: 6.0.0
@@ -3680,7 +3693,7 @@ packages:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
-      ws: 8.15.1
+      ws: 8.16.0
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -3915,7 +3928,6 @@ packages:
 
   /mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
-    dev: true
 
   /merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
@@ -4133,10 +4145,6 @@ packages:
     dependencies:
       boolbase: 1.0.0
     dev: true
-
-  /nwsapi@2.2.7:
-    resolution: {integrity: sha512-ub5E4+FBPKwAZx0UwIQOjYWGHTEq5sPqHQNRN8Z9e4A7u3Tj1weLJsL59yH9vmvqEtBHaOmT6cYQKIZOxp35FQ==}
-    dev: false
 
   /nypm@0.3.4:
     resolution: {integrity: sha512-1JLkp/zHBrkS3pZ692IqOaIKSYHmQXgqfELk6YTOfVBnwealAmPA1q2kKK7PHJAHSMBozerThEFZXP3G6o7Ukg==}
@@ -4822,6 +4830,11 @@ packages:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /require-from-string@2.0.2:
+    resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /requires-port@1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
@@ -5589,37 +5602,16 @@ packages:
       - terser
     dev: true
 
-  /vue-email-edge@0.8.5-28430632.51e5adc(typescript@5.3.3)(vue@3.3.8):
-    resolution: {integrity: sha512-giGRXo8IRAa2j6qmM13HiFtv8Fb31th5E4K3V5YGjiStTx8W+nVOc7br5hTx196C7+UELprNmd2heuWX+S2F1A==}
+  /vue-email@0.8.6(typescript@5.3.3)(vue@3.3.8):
+    resolution: {integrity: sha512-1U7xUdBcBn0ava2hz5gXPe7/6vL3Zts/8XBIVzhjfG9nuNYMKOvfRacLSeQ5lIfUvNhXvdv6NSQNOELLkdoMAQ==}
     hasBin: true
     peerDependencies:
       vue: ^3.3.8
     dependencies:
       '@vue-email/cli': 0.0.9(typescript@5.3.3)(vue@3.3.8)
       '@vue-email/tailwind': 0.0.6
-      isomorphic-dompurify: 1.12.0
+      isomorphic-dompurify: 2.2.0
       shikiji: 0.10.0-beta.9
-      ufo: 1.3.2
-      vue: 3.3.8(typescript@5.3.3)
-      vue-i18n: 9.9.0(vue@3.3.8)
-    transitivePeerDependencies:
-      - bufferutil
-      - canvas
-      - supports-color
-      - ts-node
-      - typescript
-      - utf-8-validate
-    dev: false
-
-  /vue-email@0.8.5(typescript@5.3.3)(vue@3.3.8):
-    resolution: {integrity: sha512-NE3o2H6jcZNFdQJvtYlsCWxfNDRQl2xNdBcVhpLI9K7IkLMhhrbbMmeIGdPbx4ChncQjA1z8Oe/a4+8VYzcIRw==}
-    hasBin: true
-    peerDependencies:
-      vue: ^3.3.8
-    dependencies:
-      '@vue-email/cli': 0.0.9(typescript@5.3.3)(vue@3.3.8)
-      '@vue-email/tailwind': 0.0.6
-      isomorphic-dompurify: 1.12.0
       ufo: 1.3.2
       vue: 3.3.8(typescript@5.3.3)
       vue-i18n: 9.9.0(vue@3.3.8)
@@ -5753,8 +5745,8 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /ws@8.15.1:
-    resolution: {integrity: sha512-W5OZiCjXEmk0yZ66ZN82beM5Sz7l7coYxpRkzS+p9PP+ToQry8szKh+61eNktr7EA9DOwvFGhfC605jDHbP6QQ==}
+  /ws@8.16.0:
+    resolution: {integrity: sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
