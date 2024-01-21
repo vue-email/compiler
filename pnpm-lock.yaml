@@ -18,8 +18,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1
       vue-email:
-        specifier: ^0.8.5
-        version: 0.8.5(typescript@5.3.3)(vue@3.3.8)
+        specifier: npm:vue-email-edge@0.8.5-28430607.be7e220
+        version: /vue-email-edge@0.8.5-28430607.be7e220(typescript@5.3.3)(vue@3.3.8)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.4.5
@@ -859,15 +859,6 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@flowko/tw-to-css@0.0.6:
-    resolution: {integrity: sha512-JGCOIt0ubKSpNqarwrAfm4bAlyQD+53R2ukhNZf0F8r9P+BJ2zOUTSG91dccTNUzrP8zEYvdURaVDx71vNrong==}
-    engines: {node: '>=16.0.0'}
-    dependencies:
-      postcss: 8.4.21
-      postcss-css-variables: 0.18.0(postcss@8.4.21)
-      postcss-js: 4.0.1(postcss@8.4.21)
-    dev: false
-
   /@humanwhocodes/config-array@0.11.13:
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
     engines: {node: '>=10.10.0'}
@@ -1479,22 +1470,23 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@vue-email/cli@0.0.7(typescript@5.3.3)(vue@3.3.8):
-    resolution: {integrity: sha512-v1JtVP1wv1t32f0G6Il/VW1pqe42rM51CoW07SqUTL4kSm6yNeAhOLwUtUL9+P1nFu79sGkJLLpa3pAow182+w==}
+  /@vue-email/cli@0.0.9(typescript@5.3.3)(vue@3.3.8):
+    resolution: {integrity: sha512-cpowdprs+KPkpChboy27vIdDPVaM/k94OdufO9ldMnLiKTNDx2j89wCwv+J00IKwFaz1KrfgJrkDiCOoPO2pHA==}
     hasBin: true
     dependencies:
-      '@vue-email/compiler': 0.8.2(typescript@5.3.3)(vue@3.3.8)
+      '@vue-email/compiler': 0.8.7(typescript@5.3.3)(vue@3.3.8)
     transitivePeerDependencies:
       - bufferutil
       - canvas
       - supports-color
+      - ts-node
       - typescript
       - utf-8-validate
       - vue
     dev: false
 
-  /@vue-email/compiler@0.8.2(typescript@5.3.3)(vue@3.3.8):
-    resolution: {integrity: sha512-OZlHK2NcuPsWw1DXILpRdt3P3wrugol3Ly39lU986t7QHB+UfGvJzJsBUiOleKjinQlgTCx7FqrBXAFjct9DCA==}
+  /@vue-email/compiler@0.8.7(typescript@5.3.3)(vue@3.3.8):
+    resolution: {integrity: sha512-tBeJqDyiiBXvvSx38GJMv9eZo+ZNknP2JKEGm6UztWTH8slljnceRx8Z4Sr3gBlcGBZcyKqVgdY/eTT4mfgyag==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
@@ -1502,11 +1494,12 @@ packages:
       kolorist: 1.8.0
       scule: 1.1.1
       vue: 3.3.8(typescript@5.3.3)
-      vue-email: 0.8.2(vue@3.3.8)
+      vue-email: 0.8.5(typescript@5.3.3)(vue@3.3.8)
     transitivePeerDependencies:
       - bufferutil
       - canvas
       - supports-color
+      - ts-node
       - typescript
       - utf-8-validate
     dev: false
@@ -4309,17 +4302,6 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-css-variables@0.18.0(postcss@8.4.21):
-    resolution: {integrity: sha512-lYS802gHbzn1GI+lXvy9MYIYDuGnl1WB4FTKoqMQqJ3Mab09A7a/1wZvGTkCEZJTM8mSbIyb1mJYn8f0aPye0Q==}
-    peerDependencies:
-      postcss: ^8.2.6
-    dependencies:
-      balanced-match: 1.0.2
-      escape-string-regexp: 1.0.5
-      extend: 3.0.2
-      postcss: 8.4.21
-    dev: false
-
   /postcss-css-variables@0.19.0(postcss@8.4.32):
     resolution: {integrity: sha512-Hr0WEYKLK9VCrY15anHXOd4RCvJy/xRvCnWdplGBeLInwEj6Z14hgzTb2W/39dYTCnS8hnHUfU4/F1zxX0IZuQ==}
     peerDependencies:
@@ -4377,16 +4359,6 @@ packages:
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
-    dev: false
-
-  /postcss-js@4.0.1(postcss@8.4.21):
-    resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
-    engines: {node: ^12 || ^14 || >= 16}
-    peerDependencies:
-      postcss: ^8.4.21
-    dependencies:
-      camelcase-css: 2.0.1
-      postcss: 8.4.21
     dev: false
 
   /postcss-js@4.0.1(postcss@8.4.32):
@@ -4646,15 +4618,6 @@ packages:
   /postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  /postcss@8.4.21:
-    resolution: {integrity: sha512-tP7u/Sn/dVxK2NnruI4H9BG+x+Wxz6oeZ1cJ8P6G/PZY0IKk4k/63TDsQf2kQq3+qoJeLm2kIBUNlZe3zgb4Zg==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      nanoid: 3.3.7
-      picocolors: 1.0.0
-      source-map-js: 1.0.2
-    dev: false
-
   /postcss@8.4.32:
     resolution: {integrity: sha512-D/kj5JNu6oo2EIy+XL/26JEDTlIbB8hw85G8StOE6L74RQAVVP5rej6wxCNqyMbR4RkPfqvezVbPw81Ngd6Kcw==}
     engines: {node: ^10 || ^12 || >=14}
@@ -4910,6 +4873,16 @@ packages:
   /shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+
+  /shikiji-core@0.10.0-beta.9:
+    resolution: {integrity: sha512-7dgwTyN9PeKyc4KJeyKo/qW8gi8XbR//c1CO+0B5GaeozWexNTpEL/tSohyIKkj0Z+7spfm2REmAaS39NlC4Lw==}
+    dev: false
+
+  /shikiji@0.10.0-beta.9:
+    resolution: {integrity: sha512-I+sv642n9M7/FK/dVcXp9vMv7v5Wa8gU2UuKwkIWKQFvyo+qKB8eV1zNNtRYas+jC7BLwdAaflc5BFUozAonFQ==}
+    dependencies:
+      shikiji-core: 0.10.0-beta.9
+    dev: false
 
   /siginfo@2.0.0:
     resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
@@ -5521,13 +5494,16 @@ packages:
       - terser
     dev: true
 
-  /vue-email@0.8.2(vue@3.3.8):
-    resolution: {integrity: sha512-9F4F069Pz30UXDMbWC0uCmJUFsBnqtdkoGq21sfAqsxRWABNzY0yvZwIsHRcKMwgOr1I4g4KhLL7C8vGoIxwzA==}
+  /vue-email-edge@0.8.5-28430607.be7e220(typescript@5.3.3)(vue@3.3.8):
+    resolution: {integrity: sha512-heL/G6Hu2NKyGELsZkv/iLUvX5UOLkPkDWYTDirjOS+AXuKcbT1c9yA6V0lOkqlV9aRyL4mK1KqCK8GEvLCd1g==}
+    hasBin: true
     peerDependencies:
       vue: ^3.3.8
     dependencies:
-      '@flowko/tw-to-css': 0.0.6
+      '@vue-email/cli': 0.0.9(typescript@5.3.3)(vue@3.3.8)
+      '@vue-email/tailwind': 0.0.6
       isomorphic-dompurify: 1.12.0
+      shikiji: 0.10.0-beta.9
       ufo: 1.3.2
       vue: 3.3.8(typescript@5.3.3)
       vue-i18n: 9.8.0(vue@3.3.8)
@@ -5535,6 +5511,8 @@ packages:
       - bufferutil
       - canvas
       - supports-color
+      - ts-node
+      - typescript
       - utf-8-validate
     dev: false
 
@@ -5544,7 +5522,7 @@ packages:
     peerDependencies:
       vue: ^3.3.8
     dependencies:
-      '@vue-email/cli': 0.0.7(typescript@5.3.3)(vue@3.3.8)
+      '@vue-email/cli': 0.0.9(typescript@5.3.3)(vue@3.3.8)
       '@vue-email/tailwind': 0.0.6
       isomorphic-dompurify: 1.12.0
       ufo: 1.3.2
