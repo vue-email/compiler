@@ -62,32 +62,32 @@
     "vue": "^3.3.8"
   },
   "dependencies": {
-    "import-string": "^0.1.0",
+    "import-string": "^0.1.2",
     "kolorist": "^1.8.0",
-    "scule": "^1.1.1",
+    "scule": "^1.2.0",
     "vue-email": "npm:vue-email-edge@0.8.5-28430632.51e5adc"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.4.5",
+    "@antfu/eslint-config": "^2.6.3",
     "@antfu/ni": "^0.21.12",
     "@antfu/utils": "^0.7.7",
-    "@types/node": "^20.10.4",
+    "@types/node": "^20.11.5",
     "@vue/compiler-sfc": "3.3.8",
     "@vue/server-renderer": "3.3.8",
-    "bumpp": "^9.2.1",
-    "eslint": "^8.55.0",
+    "bumpp": "^9.3.0",
+    "eslint": "^8.56.0",
     "esno": "^4.0.0",
     "jiti": "^1.21.0",
     "lint-staged": "^15.2.0",
-    "pnpm": "^8.12.1",
+    "pnpm": "^8.14.1",
     "rimraf": "^5.0.5",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.3.3",
     "unbuild": "^2.0.0",
-    "vite": "^5.0.8",
-    "vitest": "^1.0.4",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.1",
     "vue": "3.3.8",
-    "vue-i18n": "^9.8.0"
+    "vue-i18n": "^9.9.0"
   },
   "overrides": {
     "vue": "3.3.8"
