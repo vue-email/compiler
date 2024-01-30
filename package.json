@@ -65,7 +65,7 @@
     "import-string": "^0.1.2",
     "kolorist": "^1.8.0",
     "scule": "^1.2.0",
-    "vue-email": "npm:vue-email-edge@0.8.6-28443962.29cd605"
+    "vue-email": "npm:vue-email-edge@0.8.6-28444006.772137"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
