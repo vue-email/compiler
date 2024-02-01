@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  jsdom@24.0.0:
+    hash: ijsrnb2hplge3iewj6cb7vuywu
+    path: patches/jsdom@24.0.0.patch
+
 importers:
 
   .:
@@ -1534,11 +1539,11 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@vue-email/cli@0.0.10(typescript@5.3.3)(vue@3.3.8):
-    resolution: {integrity: sha512-F99FOPQ8++SGJ8toAqboiW78o2d9ZDMmh7B9x8OZBvHyq/cH4KZca3VCQ9JaaOX4Rrovu6R3mwdPgJhtfK+l8A==}
+  /@vue-email/cli@0.0.11(typescript@5.3.3)(vue@3.3.8):
+    resolution: {integrity: sha512-nPOiCwRYc0Z3BIsTJ1rnFNcQaJQ2iE1QB/GaHVMR0fxM72VB0qcQ/LsrMDgvewAgY1ZJkpGGVrwwIR7T6PEU/w==}
     hasBin: true
     dependencies:
-      '@vue-email/compiler': 0.8.8(typescript@5.3.3)(vue@3.3.8)
+      '@vue-email/compiler': 0.8.9(typescript@5.3.3)(vue@3.3.8)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -1549,8 +1554,8 @@ packages:
       - vue
     dev: false
 
-  /@vue-email/compiler@0.8.8(typescript@5.3.3)(vue@3.3.8):
-    resolution: {integrity: sha512-oYYFxps8c7KJ1/pg72JfoBAhzq0PJCRx+YsUhv++t062G281vrPcMn36MfDtPPejn3cafBWU5H2P6d2HvrBY1g==}
+  /@vue-email/compiler@0.8.9(typescript@5.3.3)(vue@3.3.8):
+    resolution: {integrity: sha512-5sHZiK/jQ/cDgCOAlenO7LZjN5DpAnnUsA7RX5n+xgMW/HrrBO2x1l9Za20TuH09CPmpePPIVGoT8DACA08IjQ==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
@@ -3615,7 +3620,7 @@ packages:
     dependencies:
       '@types/dompurify': 3.0.5
       dompurify: 3.0.8
-      jsdom: 24.0.0
+      jsdom: 24.0.0(patch_hash=ijsrnb2hplge3iewj6cb7vuywu)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -3652,7 +3657,7 @@ packages:
     engines: {node: '>=12.0.0'}
     dev: true
 
-  /jsdom@24.0.0:
+  /jsdom@24.0.0(patch_hash=ijsrnb2hplge3iewj6cb7vuywu):
     resolution: {integrity: sha512-UDS2NayCvmXSXVP6mpTj+73JnNQadZlr9N68189xib2tx5Mls7swlTNao26IoHv46BZJFvXygyRtyXd1feAk1A==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -3687,6 +3692,7 @@ packages:
       - supports-color
       - utf-8-validate
     dev: false
+    patched: true
 
   /jsesc@0.5.0:
     resolution: {integrity: sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA==}
@@ -5615,7 +5621,7 @@ packages:
     peerDependencies:
       vue: ^3.4.15
     dependencies:
-      '@vue-email/cli': 0.0.10(typescript@5.3.3)(vue@3.3.8)
+      '@vue-email/cli': 0.0.11(typescript@5.3.3)(vue@3.3.8)
       '@vue-email/tailwind': 0.0.6
       isomorphic-dompurify: 2.3.0
       shikiji: 0.10.2

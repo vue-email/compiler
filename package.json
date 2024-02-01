@@ -89,6 +89,11 @@
     "vue": "3.3.8",
     "vue-i18n": "^9.9.0"
   },
+  "pnpm": {
+    "patchedDependencies": {
+      "jsdom@24.0.0": "patches/jsdom@24.0.0.patch"
+    }
+  },
   "overrides": {
     "vue": "3.3.8"
   },
