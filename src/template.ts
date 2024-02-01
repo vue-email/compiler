@@ -5,7 +5,7 @@ import { renderToString } from '@vue/server-renderer'
 import { blue, bold, lightGreen } from 'kolorist'
 import type { Component } from 'vue'
 import { pascalCase } from 'scule'
-import { EBody, EButton, EColumn, EContainer, EFont, EHead, EHeading, EHr, EHtml, EImg, ELink, EMarkdown, EPreview, ERow, ESection, ETailwind, EText, VueEmailPlugin, cleanup, htmlToText } from 'vue-email'
+import { EBody, EButton, ECodeBlock, ECodeInline, EColumn, EContainer, EFont, EHead, EHeading, EHr, EHtml, EImg, ELink, EMarkdown, EPreview, ERow, ESection, ETailwind, EText, VueEmailPlugin, cleanup, htmlToText } from 'vue-email'
 import { importModule } from 'import-string'
 import type { I18n } from 'vue-email'
 import { createI18n } from 'vue-i18n'
@@ -18,6 +18,8 @@ const components = {
   EHead,
   EHeading,
   EButton,
+  ECodeBlock,
+  ECodeInline,
   EColumn,
   EContainer,
   EFont,
