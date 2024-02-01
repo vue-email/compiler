@@ -4,6 +4,7 @@ import type { I18n, VueEmailPluginOptions } from 'vue-email'
 export interface RenderOptions {
   props?: Record<string, unknown>
   i18n?: I18n
+  tailwind?: VueEmailPluginOptions['tailwind']
 }
 
 export interface DefineConfigFunctions {
