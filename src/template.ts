@@ -151,6 +151,14 @@ function compile(filename: string, source: string, verbose = false) {
     script = compileScript(descriptor, {
       id: descriptor.filename,
       genDefaultAs: scriptIdentifier,
+      fs: {
+        readFile: (filename: string) => {
+          return import.meta.resolve(filename)
+        },
+        fileExists: (filename: string) => {
+          return import.meta.resolve(filename) !== undefined
+        },
+      },
     })
   }
 
