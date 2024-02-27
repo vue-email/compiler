@@ -18,8 +18,8 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0
       vue-email:
-        specifier: ^0.8.9
-        version: 0.8.9(typescript@5.3.3)(vue@3.3.8)
+        specifier: ^0.8.10
+        version: 0.8.10(typescript@5.3.3)(vue@3.3.8)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.6.4
@@ -1539,11 +1539,11 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@vue-email/cli@0.0.12(typescript@5.3.3)(vue@3.3.8):
-    resolution: {integrity: sha512-20Yvbkn9xU+sbWg0c7f/Jo5/K8bo1483NQpF0AyYHDI+cvD+F76j+LkXyRRbgVN84Adi1aFKRi6Mcrov1+uo9Q==}
+  /@vue-email/cli@0.0.13(typescript@5.3.3)(vue@3.3.8):
+    resolution: {integrity: sha512-O/zG7lVh095IjxUEm7hkWlQmFANUMOvxiawGAQgxYCXwzRXOb467QqoPMz9fCbyZq+StWgGnRjxVTpYfr2cSiQ==}
     hasBin: true
     dependencies:
-      '@vue-email/compiler': 0.8.10(typescript@5.3.3)(vue@3.3.8)
+      '@vue-email/compiler': 0.8.13(typescript@5.3.3)(vue@3.3.8)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -1554,8 +1554,8 @@ packages:
       - vue
     dev: false
 
-  /@vue-email/compiler@0.8.10(typescript@5.3.3)(vue@3.3.8):
-    resolution: {integrity: sha512-CDV+VhCcPdAQDvb3dAT+l46GVNNxRG/VA+yJDMRtIEY/h7ddEGqZoYhGxGxbZZi+U4/xEUxvPT5BTPdS3V6RvA==}
+  /@vue-email/compiler@0.8.13(typescript@5.3.3)(vue@3.3.8):
+    resolution: {integrity: sha512-gVUKdo2ktwcRXHVHZfl6JsR8ltEntAEb45Wk9IcE50j81JmBbGxea5WOJ4BpCkl4G0QCZhtRBbfR+e6LciYAjQ==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
@@ -1563,7 +1563,7 @@ packages:
       kolorist: 1.8.0
       scule: 1.3.0
       vue: 3.3.8(typescript@5.3.3)
-      vue-email: 0.8.9(typescript@5.3.3)(vue@3.3.8)
+      vue-email: 0.8.10(typescript@5.3.3)(vue@3.3.8)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -5635,13 +5635,13 @@ packages:
       - terser
     dev: true
 
-  /vue-email@0.8.9(typescript@5.3.3)(vue@3.3.8):
-    resolution: {integrity: sha512-/0pHeUZu02LhnAGmWdBdT12xRgAMJH8Je61W9kYHDrTvPtt4MArw/kdQWABQO8eu8Bty56NjiJt90av4j7hlVQ==}
+  /vue-email@0.8.10(typescript@5.3.3)(vue@3.3.8):
+    resolution: {integrity: sha512-JnBbDihdkz1NaNnUSQhXL2hQ9yfLnzVJHJ+DrskYlSALT5bmsxkQJSb7tyGUoSbJ4sEXA3AqpN6oYKKglnekrQ==}
     hasBin: true
     peerDependencies:
       vue: ^3.4.15
     dependencies:
-      '@vue-email/cli': 0.0.12(typescript@5.3.3)(vue@3.3.8)
+      '@vue-email/cli': 0.0.13(typescript@5.3.3)(vue@3.3.8)
       '@vue-email/tailwind': 0.0.6
       isomorphic-dompurify: 2.3.0
       shiki: 1.0.0
