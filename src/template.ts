@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import { compileScript, compileStyle, compileTemplate, parse } from '@vue/compiler-sfc'
 import type { SFCScriptBlock, SFCStyleCompileResults } from '@vue/compiler-sfc'
 import { createApp } from 'vue'
@@ -151,6 +152,10 @@ function compile(filename: string, source: string, verbose = false) {
     script = compileScript(descriptor, {
       id: descriptor.filename,
       genDefaultAs: scriptIdentifier,
+      fs: {
+        fileExists: fs.existsSync,
+        readFile: file => fs.readFileSync(file, 'utf-8'),
+      },
     })
   }
 
