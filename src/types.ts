@@ -1,9 +1,10 @@
-import type { RuntimeCompilerOptions } from 'vue'
+import type { Component, RuntimeCompilerOptions } from 'vue'
 import type { I18n, VueEmailPluginOptions } from 'vue-email'
 
 export interface RenderOptions {
   props?: Record<string, unknown>
   i18n?: I18n
+  components?: Record<string, Component>
 }
 
 export interface DefineConfigFunctions {

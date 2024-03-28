@@ -71,6 +71,11 @@ export async function templateRender(name: string, code: SourceOptions, options?
       }
     }
 
+    if (options?.components) {
+      for (const [name, Component] of Object.entries(options.components))
+        app.component(name, Component)
+    }
+
     if (hasI18n) {
       const i18nOptions: I18n = {
         defaultLocale: options?.i18n?.defaultLocale || config?.options?.i18n?.defaultLocale || 'en',
