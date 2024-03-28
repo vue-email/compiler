@@ -72,8 +72,8 @@ export async function templateRender(name: string, code: SourceOptions, options?
     }
 
     if (options?.components) {
-      for (const [name, Component] of Object.entries(options.components))
-        app.component(name, Component)
+      for (const [name, component] of Object.entries(options.components))
+        app.component(name, component)
     }
 
     if (hasI18n) {
