@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+import { defineComponent, h } from 'vue'
 import { describe, expect, it } from 'vitest'
 import { config } from '../src/index'
 
@@ -89,6 +90,25 @@ describe('compiler', () => {
 
     expect(template.html).toBe(
       '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><body><h1>testing</h1><div>test</div></body>',
+    )
+  })
+
+  it('should add custom component', async () => {
+    const template = await vuemail.render('ComponentInComponent.vue', {
+      components: {
+        Custom: defineComponent({
+          props: {
+            name: String,
+          },
+          setup(props) {
+            return () => h('p', {}, `Hello, ${props.name}!`)
+          },
+        }),
+      },
+    })
+
+    expect(template.html).toBe(
+      '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><p>Hello, Valerii!</p>',
     )
   })
 })
